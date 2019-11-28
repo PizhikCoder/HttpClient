@@ -1,0 +1,9 @@
+C:\Users\user\source\repos\ProcessDelete\ProcessDelete\bin\Debug\ProcessDelete.dll
+C:\Users\user\source\repos\ProcessDelete\ProcessDelete\bin\Debug\ProcessDelete.pdb
+C:\Users\user\source\repos\ProcessDelete\ProcessDelete\obj\Debug\ProcessDelete.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\ProcessDelete\ProcessDelete\obj\Debug\ProcessDelete.dll
+C:\Users\user\source\repos\ProcessDelete\ProcessDelete\obj\Debug\ProcessDelete.pdb
+C:\Users\Павел\source\repos\BotNet\ProcessDelete\ProcessDelete\bin\Debug\ProcessDelete.dll
+C:\Users\Павел\source\repos\BotNet\ProcessDelete\ProcessDelete\bin\Debug\ProcessDelete.pdb
+C:\Users\Павел\source\repos\BotNet\ProcessDelete\ProcessDelete\obj\Debug\ProcessDelete.dll
+C:\Users\Павел\source\repos\BotNet\ProcessDelete\ProcessDelete\obj\Debug\ProcessDelete.pdb

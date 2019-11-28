@@ -1,0 +1,11 @@
+C:\Users\user\source\repos\ProcessCreate\ProcessCreate\bin\Debug\ProcessCreate.dll
+C:\Users\user\source\repos\ProcessCreate\ProcessCreate\bin\Debug\ProcessCreate.pdb
+C:\Users\user\source\repos\ProcessCreate\ProcessCreate\obj\Debug\ProcessCreate.csprojAssemblyReference.cache
+C:\Users\user\source\repos\ProcessCreate\ProcessCreate\obj\Debug\ProcessCreate.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\ProcessCreate\ProcessCreate\obj\Debug\ProcessCreate.dll
+C:\Users\user\source\repos\ProcessCreate\ProcessCreate\obj\Debug\ProcessCreate.pdb
+C:\Users\Павел\source\repos\BotNet\ProcessCreate\ProcessCreate\bin\Debug\ProcessCreate.dll
+C:\Users\Павел\source\repos\BotNet\ProcessCreate\ProcessCreate\bin\Debug\ProcessCreate.pdb
+C:\Users\Павел\source\repos\BotNet\ProcessCreate\ProcessCreate\obj\Debug\ProcessCreate.csprojAssemblyReference.cache
+C:\Users\Павел\source\repos\BotNet\ProcessCreate\ProcessCreate\obj\Debug\ProcessCreate.dll
+C:\Users\Павел\source\repos\BotNet\ProcessCreate\ProcessCreate\obj\Debug\ProcessCreate.pdb

@@ -1,0 +1,5 @@
+C:\Users\Павел\source\repos\BotNet\CreateWrite\CreateWrite\bin\Debug\CreateWrite.dll
+C:\Users\Павел\source\repos\BotNet\CreateWrite\CreateWrite\bin\Debug\CreateWrite.pdb
+C:\Users\Павел\source\repos\BotNet\CreateWrite\CreateWrite\obj\Debug\CreateWrite.csprojAssemblyReference.cache
+C:\Users\Павел\source\repos\BotNet\CreateWrite\CreateWrite\obj\Debug\CreateWrite.dll
+C:\Users\Павел\source\repos\BotNet\CreateWrite\CreateWrite\obj\Debug\CreateWrite.pdb

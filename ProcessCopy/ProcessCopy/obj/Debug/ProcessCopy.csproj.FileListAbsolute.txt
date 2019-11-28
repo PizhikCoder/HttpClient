@@ -1,0 +1,10 @@
+C:\Users\user\source\repos\ProcessCopy\ProcessCopy\bin\Debug\ProcessCopy.dll
+C:\Users\user\source\repos\ProcessCopy\ProcessCopy\bin\Debug\ProcessCopy.pdb
+C:\Users\user\source\repos\ProcessCopy\ProcessCopy\obj\Debug\ProcessCopy.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\ProcessCopy\ProcessCopy\obj\Debug\ProcessCopy.dll
+C:\Users\user\source\repos\ProcessCopy\ProcessCopy\obj\Debug\ProcessCopy.pdb
+C:\Users\Павел\source\repos\BotNet\ProcessCopy\ProcessCopy\bin\Debug\ProcessCopy.dll
+C:\Users\Павел\source\repos\BotNet\ProcessCopy\ProcessCopy\bin\Debug\ProcessCopy.pdb
+C:\Users\Павел\source\repos\BotNet\ProcessCopy\ProcessCopy\obj\Debug\ProcessCopy.csprojAssemblyReference.cache
+C:\Users\Павел\source\repos\BotNet\ProcessCopy\ProcessCopy\obj\Debug\ProcessCopy.dll
+C:\Users\Павел\source\repos\BotNet\ProcessCopy\ProcessCopy\obj\Debug\ProcessCopy.pdb

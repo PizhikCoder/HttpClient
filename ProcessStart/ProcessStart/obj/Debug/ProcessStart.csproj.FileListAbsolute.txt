@@ -1,0 +1,6 @@
+C:\Users\user\source\repos\ProcessStart\ProcessStart\bin\Debug\ProcessStart.dll
+C:\Users\user\source\repos\ProcessStart\ProcessStart\bin\Debug\ProcessStart.pdb
+C:\Users\user\source\repos\ProcessStart\ProcessStart\obj\Debug\ProcessStart.csprojAssemblyReference.cache
+C:\Users\user\source\repos\ProcessStart\ProcessStart\obj\Debug\ProcessStart.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\ProcessStart\ProcessStart\obj\Debug\ProcessStart.dll
+C:\Users\user\source\repos\ProcessStart\ProcessStart\obj\Debug\ProcessStart.pdb
