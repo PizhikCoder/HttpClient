@@ -1,0 +1,5 @@
+C:\Users\Павел\source\repos\ProcessStartInvis\ProcessStartInvis\bin\Debug\ProcessStartInvis.dll
+C:\Users\Павел\source\repos\ProcessStartInvis\ProcessStartInvis\bin\Debug\ProcessStartInvis.pdb
+C:\Users\Павел\source\repos\ProcessStartInvis\ProcessStartInvis\obj\Debug\ProcessStartInvis.csprojAssemblyReference.cache
+C:\Users\Павел\source\repos\ProcessStartInvis\ProcessStartInvis\obj\Debug\ProcessStartInvis.dll
+C:\Users\Павел\source\repos\ProcessStartInvis\ProcessStartInvis\obj\Debug\ProcessStartInvis.pdb

