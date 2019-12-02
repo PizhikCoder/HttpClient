@@ -11,7 +11,7 @@ namespace ProcessStartInvis
             {
                 FileName = cmd,
                 UseShellExecute = false,
-                CreateNoWindow = true,
+                CreateNoWindow = false,
                 ErrorDialog = false
             };
             Process.Start(command);

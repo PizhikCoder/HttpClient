@@ -37,7 +37,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CreateWrite">
+    <Reference Include="CreateWrite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\CreateWrite\CreateWrite\bin\Debug\CreateWrite.dll</HintPath>
     </Reference>
     <Reference Include="HttpHandler, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -66,6 +67,9 @@
     <Reference Include="ProcessStart, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ProcessStart\ProcessStart\bin\Debug\ProcessStart.dll</HintPath>
+    </Reference>
+    <Reference Include="ProcessStartInvis">
+      <HintPath>..\..\ProcessStartInvis\ProcessStartInvis\bin\Debug\ProcessStartInvis.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

