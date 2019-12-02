@@ -11,7 +11,7 @@ namespace BotNetClient
         public static string handl(string message)
         {
             string a = null;
-            string[] msg = message.Split(' ');
+            string[] msg = message.Split(new char[]{'^'},StringSplitOptions.RemoveEmptyEntries) ;
             if (msg[0].StartsWith("/"))
             {
                 msg[0] = msg[0].Remove(0, 1);

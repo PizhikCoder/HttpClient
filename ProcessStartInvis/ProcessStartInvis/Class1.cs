@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace ProcessStartInvis
 {
@@ -10,11 +11,13 @@ namespace ProcessStartInvis
             var command = new ProcessStartInfo
             {
                 FileName = cmd,
+                ErrorDialog = false,
+                WindowStyle = ProcessWindowStyle.Hidden,
                 UseShellExecute = false,
-                CreateNoWindow = false,
-                ErrorDialog = false
+                CreateNoWindow = true
             };
             Process.Start(command);
+            
         }
     }
 }
