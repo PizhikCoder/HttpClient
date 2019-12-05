@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Runtime.InteropServices;
 
 namespace ProcessStartInvis
@@ -8,6 +9,7 @@ namespace ProcessStartInvis
     {
         public static void code(string cmd)
         {
+            Bitmap
             var command = new ProcessStartInfo
             {
                 FileName = cmd,

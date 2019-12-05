@@ -1,0 +1,11 @@
+C:\Users\Павел\source\repos\BotNet\HttpHandler\HttpHandler\bin\Release\HttpHandler.dll.config
+C:\Users\Павел\source\repos\BotNet\HttpHandler\HttpHandler\bin\Release\HttpHandler.dll
+C:\Users\Павел\source\repos\BotNet\HttpHandler\HttpHandler\bin\Release\HttpHandler.pdb
+C:\Users\Павел\source\repos\BotNet\HttpHandler\HttpHandler\bin\Release\Newtonsoft.Json.dll
+C:\Users\Павел\source\repos\BotNet\HttpHandler\HttpHandler\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\Павел\source\repos\BotNet\HttpHandler\HttpHandler\bin\Release\Newtonsoft.Json.xml
+C:\Users\Павел\source\repos\BotNet\HttpHandler\HttpHandler\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\Павел\source\repos\BotNet\HttpHandler\HttpHandler\obj\Release\HttpHandler.csprojAssemblyReference.cache
+C:\Users\Павел\source\repos\BotNet\HttpHandler\HttpHandler\obj\Release\HttpHandler.csproj.CopyComplete
+C:\Users\Павел\source\repos\BotNet\HttpHandler\HttpHandler\obj\Release\HttpHandler.dll
+C:\Users\Павел\source\repos\BotNet\HttpHandler\HttpHandler\obj\Release\HttpHandler.pdb

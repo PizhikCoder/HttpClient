@@ -64,6 +64,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ProcessDelete\ProcessDelete\bin\Debug\ProcessDelete.dll</HintPath>
     </Reference>
+    <Reference Include="ProcessShowingTheScreen">
+      <HintPath>..\..\ProcessShowingTheScreen\ProcessShowingTheScreen\bin\Debug\ProcessShowingTheScreen.dll</HintPath>
+    </Reference>
     <Reference Include="ProcessStart, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ProcessStart\ProcessStart\bin\Debug\ProcessStart.dll</HintPath>

@@ -1,0 +1,10 @@
+C:\Users\Павел\source\repos\ProcessShowingTheScreen\ProcessShowingTheScreen\bin\Debug\ProcessShowingTheScreen.dll
+C:\Users\Павел\source\repos\ProcessShowingTheScreen\ProcessShowingTheScreen\bin\Debug\ProcessShowingTheScreen.pdb
+C:\Users\Павел\source\repos\ProcessShowingTheScreen\ProcessShowingTheScreen\obj\Debug\ProcessShowingTheScreen.csprojAssemblyReference.cache
+C:\Users\Павел\source\repos\ProcessShowingTheScreen\ProcessShowingTheScreen\obj\Debug\ProcessShowingTheScreen.dll
+C:\Users\Павел\source\repos\ProcessShowingTheScreen\ProcessShowingTheScreen\obj\Debug\ProcessShowingTheScreen.pdb
+C:\Users\Павел\source\repos\BotNet\ProcessShowingTheScreen\ProcessShowingTheScreen\bin\Debug\ProcessShowingTheScreen.dll
+C:\Users\Павел\source\repos\BotNet\ProcessShowingTheScreen\ProcessShowingTheScreen\bin\Debug\ProcessShowingTheScreen.pdb
+C:\Users\Павел\source\repos\BotNet\ProcessShowingTheScreen\ProcessShowingTheScreen\obj\Debug\ProcessShowingTheScreen.csprojAssemblyReference.cache
+C:\Users\Павел\source\repos\BotNet\ProcessShowingTheScreen\ProcessShowingTheScreen\obj\Debug\ProcessShowingTheScreen.dll
+C:\Users\Павел\source\repos\BotNet\ProcessShowingTheScreen\ProcessShowingTheScreen\obj\Debug\ProcessShowingTheScreen.pdb

@@ -168,3 +168,5 @@ C:\Users\Павел\source\repos\BotNetClient\BotNetClient\BotNetClient\obj\Debu
 C:\Users\Павел\source\repos\BotNetClient\BotNetClient\BotNetClient\obj\Debug\BotNetClient.pdb
 C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\bin\Debug\ProcessStartInvis.dll
 C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\bin\Debug\ProcessStartInvis.pdb
+C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\bin\Debug\ProcessShowingTheScreen.dll
+C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\bin\Debug\ProcessShowingTheScreen.pdb
