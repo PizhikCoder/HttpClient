@@ -1,11 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\BotNetClient",
-    "\\BotNetClient\\BotNetClient",
-    "\\svchost.exe",
-    "\\svchost.exe\\svchost.exe"
+    ""
   ],
-  "SelectedNode": "\\svchost.exe\\svchost.exe\\Program.cs",
+  "SelectedNode": "\\BotNetClient",
   "PreviewInSolutionExplorer": false
 }

