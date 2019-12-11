@@ -7,9 +7,8 @@ namespace ProcessStartInvis
 {
     public class Class1
     {
-        public static void code(string cmd)
+        public static void code6(string cmd)
         {
-            Bitmap
             var command = new ProcessStartInfo
             {
                 FileName = cmd,

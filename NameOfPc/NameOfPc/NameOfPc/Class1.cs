@@ -8,7 +8,7 @@ namespace NameOfPc
 {
     public class Class1
     {
-        public static string code()
+        public static string code8()
         {
             return String.Format("Name Of PC: " + System.Environment.UserName);
         }

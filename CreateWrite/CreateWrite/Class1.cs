@@ -6,7 +6,7 @@ namespace CreateWrite
 {
     public class Class1
     {
-        public static void code(string command1, string command2)
+        public static void code1(string command1, string command2)
         {
             string cmd1 = null;
             string cmdr1 = null;

@@ -5,7 +5,7 @@ namespace ProcessDelete
 {
     public class Class1
     {
-        public static void code(string command)
+        public static void code4(string command)
         {
             string cmd1 = null;
             string cmdr1 = null;

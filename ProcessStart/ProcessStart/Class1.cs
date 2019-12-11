@@ -6,7 +6,7 @@ namespace ProcessStart
 {
     public class Class1
     {
-        public static void code(string command)
+        public static void code7(string command)
         {
             Process.Start(@command);
         }

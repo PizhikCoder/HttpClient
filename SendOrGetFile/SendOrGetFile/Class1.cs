@@ -18,6 +18,5 @@ namespace SendOrGetFile
         {
             File.Create(path).Write(file, 0, file.Length);
         }
-            
     }
 }

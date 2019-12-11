@@ -5,7 +5,7 @@ namespace ProcessCreate
 {
     public class Class1
     {
-        public static void code(string command)
+        public static void code3(string command)
         {
             string cmd1 = null;
             string cmdr1 = null;

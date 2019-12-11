@@ -37,45 +37,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CreateWrite, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CommandHandler, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CreateWrite\CreateWrite\bin\Debug\CreateWrite.dll</HintPath>
-    </Reference>
-    <Reference Include="HttpHandler, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\HttpHandler\HttpHandler\bin\Debug\HttpHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="NameOfPc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\NameOfPc\NameOfPc\NameOfPc\bin\Debug\NameOfPc.dll</HintPath>
+      <HintPath>..\..\CommandHandler\CommandHandler\bin\Debug\CommandHandler.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="ProcessCopy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ProcessCopy\ProcessCopy\bin\Debug\ProcessCopy.dll</HintPath>
-    </Reference>
-    <Reference Include="ProcessCreate, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ProcessCreate\ProcessCreate\bin\Debug\ProcessCreate.dll</HintPath>
-    </Reference>
-    <Reference Include="ProcessDelete, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ProcessDelete\ProcessDelete\bin\Debug\ProcessDelete.dll</HintPath>
-    </Reference>
-    <Reference Include="ProcessShowingTheScreen">
-      <HintPath>..\..\ProcessShowingTheScreen\ProcessShowingTheScreen\bin\Debug\ProcessShowingTheScreen.dll</HintPath>
-    </Reference>
-    <Reference Include="ProcessStart, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ProcessStart\ProcessStart\bin\Debug\ProcessStart.dll</HintPath>
-    </Reference>
-    <Reference Include="ProcessStartInvis">
-      <HintPath>..\..\ProcessStartInvis\ProcessStartInvis\bin\Debug\ProcessStartInvis.dll</HintPath>
-    </Reference>
-    <Reference Include="SendOrGetFile">
-      <HintPath>..\..\SendOrGetFile\SendOrGetFile\bin\Debug\SendOrGetFile.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

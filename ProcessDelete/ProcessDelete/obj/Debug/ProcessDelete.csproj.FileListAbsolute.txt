@@ -7,3 +7,4 @@ C:\Users\Павел\source\repos\BotNet\ProcessDelete\ProcessDelete\bin\Debug\Pr
 C:\Users\Павел\source\repos\BotNet\ProcessDelete\ProcessDelete\bin\Debug\ProcessDelete.pdb
 C:\Users\Павел\source\repos\BotNet\ProcessDelete\ProcessDelete\obj\Debug\ProcessDelete.dll
 C:\Users\Павел\source\repos\BotNet\ProcessDelete\ProcessDelete\obj\Debug\ProcessDelete.pdb
+C:\Users\Павел\source\repos\BotNet\ProcessDelete\ProcessDelete\obj\Debug\ProcessDelete.csprojAssemblyReference.cache

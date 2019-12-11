@@ -3,12 +3,13 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace ProcessShowingTheScreen
 {
     public class Class1
     {
-        public static byte[] code()
+        public static byte[] code5()
         {
             var size = Screen.PrimaryScreen.Bounds.Size;
             Bitmap bmp = new Bitmap(size.Width, size.Height);

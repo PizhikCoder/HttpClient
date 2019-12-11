@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CommandHandler\\CommandHandler"
   ],
-  "SelectedNode": "\\BotNetClient",
+  "SelectedNode": "\\ProcessShowingTheScreen",
   "PreviewInSolutionExplorer": false
 }

