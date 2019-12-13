@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Drawing.Drawing2D;
 
 namespace CommandHandler
 {
@@ -328,8 +329,16 @@ namespace CommandHandler
             Bitmap bmp = new Bitmap(size.Width, size.Height);
             Graphics graph = Graphics.FromImage(bmp);
             graph.CopyFromScreen(0, 0, 0, 0, new Size(size.Width, size.Height));
+            graph.InterpolationMode = InterpolationMode.Bicubic;
             MemoryStream ms = new MemoryStream();
-            bmp.Save(ms, ImageFormat.Png);
+            Bitmap bmpToSend = new Bitmap(bmp, 200, 200);
+            Graphics graphToSend = Graphics.FromImage(bmpToSend);
+            graphToSend.CompositingQuality = CompositingQuality.HighQuality;
+            graphToSend.SmoothingMode = SmoothingMode.HighQuality;
+            graphToSend.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            graphToSend.InterpolationMode = InterpolationMode.Bicubic;
+            bmpToSend.Save(@"C:\Users\Павел\Desktop\123321.jpeg",ImageFormat.Jpeg);
+            bmpToSend.Save(ms, ImageFormat.Jpeg);
             byte[] imagebt = new byte[3110400];
             imagebt = ms.ToArray();
             return imagebt;
