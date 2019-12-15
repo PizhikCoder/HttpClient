@@ -5,8 +5,6 @@ namespace BotNetClient
 {
     class handler
     {
-        [DllImport(@"C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\bin\Debug\CommandHandler.dll", EntryPoint = "Main", CharSet = CharSet.Auto)]
-        public static extern string Main(string cmd, string path1, string path2, string ip, uint idc);
         public static string handl(string message, uint id, string ip)
         {
             string a = null;
@@ -28,7 +26,7 @@ namespace BotNetClient
             {
                 return "Команда не распознана";
             }
-            a = CommandHandler.Class1.Main(msg[0], msg[1], msg[2], ip, id);
+            a = CommandHandler.Class1.Main(msg[0], msg[1], msg[2], id);
             #region switch
             //switch (msg[0])
             //{

