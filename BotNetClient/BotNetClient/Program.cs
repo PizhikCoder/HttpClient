@@ -17,6 +17,7 @@ namespace BotNetClient
         public static Thread miniprogram = new Thread(new ThreadStart(SecondThread.miniprog));
         static void Main(string[] args)
         {
+            ServicePointManager.Expect100Continue = false;
             string address = "192.168.0.17";
             int port = 8005;
             IPHostEntry iphostinfo = Dns.Resolve(Dns.GetHostName());
@@ -76,7 +77,9 @@ namespace BotNetClient
             finally
             {
                 Thread.Sleep(5000);
-                //Process.Start(Assembly.GetExecutingAssembly().Location);
+                miniprogram.Abort();
+                Process.Start(Assembly.GetExecutingAssembly().Location);
+                Environment.Exit(0);
             }
         }
     }

