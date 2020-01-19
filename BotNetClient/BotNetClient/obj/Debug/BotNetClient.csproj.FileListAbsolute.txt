@@ -154,3 +154,17 @@ C:\Users\Павел\source\repos\BotNetClient\BotNetClient\BotNetClient\obj\Debu
 C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\bin\Debug\CommandHandler.dll
 C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\bin\Debug\CommandHandler.pdb
 C:\Users\Павел\source\repos\BotNet\BotNetClient\BotNetClient\bin\Debug\CommandHandler.dll.config
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\bin\Debug\BotNetClient.exe.config
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\bin\Debug\BotNetClient.exe
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\bin\Debug\BotNetClient.pdb
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\bin\Debug\CommandHandler.dll
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\bin\Debug\CommandHandler.pdb
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\bin\Debug\CommandHandler.dll.config
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\obj\Debug\BotNetClient.csprojAssemblyReference.cache
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\obj\Debug\BotNetClient.csproj.CopyComplete
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\obj\Debug\BotNetClient.exe
+C:\Users\Pasha\source\repos\HttpClient\BotNetClient\BotNetClient\obj\Debug\BotNetClient.pdb
