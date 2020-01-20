@@ -12,3 +12,17 @@ C:\Users\Pasha\source\repos\AdminHack\AdminHack\bin\Debug\System.Net.Http.Format
 C:\Users\Pasha\source\repos\AdminHack\AdminHack\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Pasha\source\repos\AdminHack\AdminHack\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\Pasha\source\repos\AdminHack\AdminHack\obj\Debug\AdminHack.csproj.CopyComplete
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\bin\Debug\AdminHack.exe.config
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\bin\Debug\AdminHack.exe
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\bin\Debug\AdminHack.pdb
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\obj\Debug\AdminHack.csprojAssemblyReference.cache
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\obj\Debug\AdminHack.Form1.resources
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\obj\Debug\AdminHack.Properties.Resources.resources
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\obj\Debug\AdminHack.csproj.GenerateResource.cache
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\obj\Debug\AdminHack.csproj.CopyComplete
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\obj\Debug\AdminHack.exe
+C:\Users\Pasha\Source\Repos\HttpClient\AdminHack\AdminHack\obj\Debug\AdminHack.pdb

