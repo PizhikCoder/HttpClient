@@ -9,3 +9,14 @@ C:\Users\Павел\source\repos\BotNet\svchost.exe\svchost.exe\obj\Release\svch
 C:\Users\Павел\source\repos\BotNet\svchost.exe\svchost.exe\obj\Release\svchost.exe.csproj.CopyComplete
 C:\Users\Павел\source\repos\BotNet\svchost.exe\svchost.exe\obj\Release\svchost.exe.exe
 C:\Users\Павел\source\repos\BotNet\svchost.exe\svchost.exe\obj\Release\svchost.exe.pdb
+C:\Users\Pasha\source\repos\HttpClient\svchost.exe\svchost.exe\bin\Release\svchost.exe.exe.config
+C:\Users\Pasha\source\repos\HttpClient\svchost.exe\svchost.exe\bin\Release\svchost.exe.exe
+C:\Users\Pasha\source\repos\HttpClient\svchost.exe\svchost.exe\bin\Release\svchost.exe.pdb
+C:\Users\Pasha\source\repos\HttpClient\svchost.exe\svchost.exe\bin\Release\Newtonsoft.Json.dll
+C:\Users\Pasha\source\repos\HttpClient\svchost.exe\svchost.exe\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\Pasha\source\repos\HttpClient\svchost.exe\svchost.exe\bin\Release\Newtonsoft.Json.xml
+C:\Users\Pasha\source\repos\HttpClient\svchost.exe\svchost.exe\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\Pasha\source\repos\HttpClient\svchost.exe\svchost.exe\obj\Release\svchost.exe.csprojAssemblyReference.cache
+C:\Users\Pasha\source\repos\HttpClient\svchost.exe\svchost.exe\obj\Release\svchost.exe.csproj.CopyComplete
+C:\Users\Pasha\source\repos\HttpClient\svchost.exe\svchost.exe\obj\Release\svchost.exe.exe
+C:\Users\Pasha\source\repos\HttpClient\svchost.exe\svchost.exe\obj\Release\svchost.exe.pdb

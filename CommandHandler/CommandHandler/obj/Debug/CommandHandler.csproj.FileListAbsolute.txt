@@ -15,3 +15,15 @@ C:\Users\Павел\source\repos\BotNet\CommandHandler\CommandHandler\bin\Debug\
 C:\Users\Павел\source\repos\BotNet\CommandHandler\CommandHandler\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\Павел\source\repos\BotNet\CommandHandler\CommandHandler\obj\Debug\CommandHandler.csproj.CopyComplete
 C:\Users\Павел\source\repos\BotNet\CommandHandler\CommandHandler\bin\Debug\CommandHandler.tlb
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Debug\CommandHandler.dll.config
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Debug\CommandHandler.dll
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Debug\CommandHandler.pdb
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\obj\Debug\CommandHandler.csprojAssemblyReference.cache
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\obj\Debug\CommandHandler.csproj.CopyComplete
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\obj\Debug\CommandHandler.dll
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\obj\Debug\CommandHandler.pdb
+C:\Users\Pasha\Source\Repos\HttpClient\CommandHandler\CommandHandler\bin\Debug\CommandHandler.tlb

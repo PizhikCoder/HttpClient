@@ -1,0 +1,11 @@
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Release\CommandHandler.dll.config
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Release\CommandHandler.dll
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Release\CommandHandler.pdb
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Release\Newtonsoft.Json.dll
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Release\Newtonsoft.Json.xml
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\obj\Release\CommandHandler.csprojAssemblyReference.cache
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\obj\Release\CommandHandler.csproj.CopyComplete
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\obj\Release\CommandHandler.dll
+C:\Users\Pasha\source\repos\HttpClient\CommandHandler\CommandHandler\obj\Release\CommandHandler.pdb
