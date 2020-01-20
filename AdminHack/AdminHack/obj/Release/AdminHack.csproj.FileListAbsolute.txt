@@ -1,0 +1,14 @@
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\bin\Release\AdminHack.exe.config
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\bin\Release\AdminHack.exe
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\bin\Release\AdminHack.pdb
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\bin\Release\Newtonsoft.Json.dll
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\bin\Release\Newtonsoft.Json.xml
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\obj\Release\AdminHack.csprojAssemblyReference.cache
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\obj\Release\AdminHack.Form1.resources
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\obj\Release\AdminHack.Properties.Resources.resources
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\obj\Release\AdminHack.csproj.GenerateResource.cache
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\obj\Release\AdminHack.csproj.CopyComplete
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\obj\Release\AdminHack.exe
+C:\Users\Pasha\source\repos\AdminHack\AdminHack\obj\Release\AdminHack.pdb
