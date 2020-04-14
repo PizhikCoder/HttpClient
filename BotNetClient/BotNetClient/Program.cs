@@ -81,7 +81,7 @@ namespace BotNetClient
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                HttpHandler.SendResponse(ex.ToString(), ipadress.ToString());
+                HttpHandler.SendResponse(ex.ToString(), idc.ToString());
             }
             finally
             {
